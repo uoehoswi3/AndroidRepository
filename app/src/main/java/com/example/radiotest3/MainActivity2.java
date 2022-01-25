@@ -14,10 +14,8 @@ public class MainActivity2 extends AppCompatActivity {
 
     TextView Price, List;
     String List3 = "", List4 = "", List34;
-    String List12;
     RadioGroup radioGroup3, radioGroup4;
     RadioButton rbma, rbsa, rbfin, rbpo, rbbe, rbmen;
-    int i1i2;
     int i3 = 0;
     int i4 = 0;
     int i3i4 = 0;
@@ -29,9 +27,9 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Intent intent = getIntent();
-        Data data = (Data)intent.getSerializableExtra("data");
-        List12 = data.ListList;
-        i1i2 = data.iiii;
+        Bundle bundle = intent.getExtras();
+        String list12 = bundle.getString("ListList");
+        Integer price12 = bundle.getInt("PricePrice");
         Price = findViewById(R.id.price);
         List = findViewById(R.id.list);
         radioGroup3 = findViewById(R.id.RGfis);
@@ -47,51 +45,51 @@ public class MainActivity2 extends AppCompatActivity {
         radioGroup3.setOnCheckedChangeListener((radioGroup1, i) -> {
             if(rbma.isChecked()) {
                 i3 = 300;
-                List3 = "고등어";
+                List3 = "고등어  ";
             }
             else if(rbsa.isChecked()) {
                 i3 = 350;
-                List3 = "연어";
+                List3 = "연어  ";
             }
             else {
                 i3 = 0;
                 List3 = " ";
             }
-            i3i4 = i1i2 + i3 + i4;
-            List34 = List12 + List3 + List4;
-            String price = Integer.toString(i3i4);
+            i3i4 = i3 + i4;
+            List34 = List3 + List4;
+            String price = Integer.toString(i3i4+price12);
             Price.setText(price);
-            List.setText(List34);
+            List.setText(list12+List34);
         });
 
         radioGroup4.setOnCheckedChangeListener((radioGroup2, i) -> {
             if(rbpo.isChecked()) {
                 i4 = 500;
-                List4 = "  삼겹살";
+                List4 = "삼겹살  ";
             }
             else if(rbbe.isChecked()) {
                 i4 = 1000;
-                List4 = "  스테이크";
+                List4 = "스테이크  ";
             }
             else {
                 i4 = 0;
                 List4 = " ";
             }
-            i3i4 = i1i2 + i3 + i4;
-            List34 = List12 + List3 + List4;
-            String price = Integer.toString(i3i4);
+            i3i4 = i3 + i4;
+            List34 = List3 + List4;
+            String price = Integer.toString(i3i4+price12);
             Price.setText(price);
-            List.setText(List34);
+            List.setText(list12+List34);
         });
 
         PButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity2.this, MainActivity.class);
-                String ListList = List34;
-                int iiii = i3i4;
-                intent.putExtra("ListList", ListList);
-                intent.putExtra("iiii", iiii);
+                String list = List34;
+                int price = i3i4;
+                intent.putExtra("List", list);
+                intent.putExtra("price", price);
                 startActivity(intent);
             }
         });

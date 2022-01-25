@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         radioGroup1.setOnCheckedChangeListener((radioGroup1, i) -> {
           if(rbca.isChecked()) {
               i1 = 200;
-              List1 = "배추";
+              List1 = "배추  ";
           }
           else if(rbon.isChecked()) {
               i1 = 40;
-              List1 = "양파";
+              List1 = "양파  ";
           }
           else {
               i1 = 0;
@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
         radioGroup2.setOnCheckedChangeListener((radioGroup2, i) -> {
             if(rbap.isChecked()) {
                 i2 = 50;
-                List2 = "  사과";
+                List2 = "사과  ";
             }
             else if(rbpe.isChecked()) {
                 i2 = 100;
-                List2 = "  배";
+                List2 = "배  ";
             }
             else {
                 i2 = 0;
@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, MainActivity2.class);
-                String ListList = List12;
-                int iiii = i1i2;
-                Data data = new Data(ListList, iiii);
-                intent.putExtra("data", data);
+                String list = List12;
+                int price = i1i2;
+                intent.putExtra("ListList", list);
+                intent.putExtra("PricePrice", price);
                 startActivity(intent);
             }
         });
