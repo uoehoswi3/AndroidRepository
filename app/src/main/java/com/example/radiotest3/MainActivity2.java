@@ -30,6 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         String list12 = bundle.getString("ListList");
         Integer price12 = bundle.getInt("PricePrice");
+
         Price = findViewById(R.id.price);
         List = findViewById(R.id.list);
         radioGroup3 = findViewById(R.id.RGfis);
