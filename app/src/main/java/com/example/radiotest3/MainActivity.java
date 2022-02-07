@@ -16,10 +16,11 @@ public class MainActivity extends AppCompatActivity {
     String List1 = "", List2 = "", List12;
     RadioGroup radioGroup1, radioGroup2;
     RadioButton rbca, rbon, rbven, rbap, rbpe, rbfrn;
+    // radiobutton_ cabbage, onion, vegetable none, apple, pear, fruit none
     int i1 = 0;
     int i2 = 0;
     int i1i2 = 0;
-    Button NButton;
+    Button NButton; //NextButton
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
