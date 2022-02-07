@@ -43,6 +43,9 @@ public class MainActivity2 extends AppCompatActivity {
         rbmen = findViewById(R.id.meanone);
         PButton = findViewById(R.id.PrevButton);
 
+        List.setText(list12);
+        Price.setText(Integer.toString(price12));
+
         radioGroup3.setOnCheckedChangeListener((radioGroup1, i) -> {
             if(rbma.isChecked()) {
                 i3 = 300;
